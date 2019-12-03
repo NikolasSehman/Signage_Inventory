@@ -8,7 +8,7 @@ var mysql = require('mysql');
 const db = mysql.createConnection ({
   host: 'cleanearthsoftware.com',
   port: '3306',
-  user: 'cims_user2234',
+  user: 'cims_user2',
   password: 'CSC4610-01',
   database: '4236paulgarlandclean_cims2'
 });
