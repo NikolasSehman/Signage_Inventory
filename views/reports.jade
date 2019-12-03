@@ -8,7 +8,7 @@ block content
     function updatePath(){
       var action_src = "http://localhost:3000/reports/" + document.getElementsByName("sign")[0].value;
       var your_form = document.getElementById('search-signs');
-      your_form.action = action_src ;
+      your_form.action = action_src;
     }
 
   form(id="search-signs", method="GET", onsubmit="updatePath()")

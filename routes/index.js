@@ -10,10 +10,17 @@ router.get('/reports/:search', function(req, res, next) {
   // var search = req.params.tagId;
   // var signTypes = ['Express','sign','another sign'];
   //var signTypes = sql call;
+  var returned_from_sql;
   var query = 'SELECT * FROM signs WHERE LOWER(description) LIKE (\'%' + req.params.search.toLowerCase() + '%\')'
+  db.query(query, function (err, result, fields) {
+    if (err) throw err;
+    returned_from_sql = result;
+    res.render('reports-search', { signs: returned_from_sql });
+  });
+
   // var returned_sql = db.query(query)
   // res.render('reports-search', { signs: returned_sql });
-  res.send(query)
+
 });
 router.get('/reports', function(req, res, next) {
   res.render('reports', { signTypes: ['Express','sign','another sign'] });
