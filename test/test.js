@@ -65,9 +65,9 @@ describe('Database Connection', function() {
       db.query("SELECT 1 + 1 AS sum", function (err, result, fields) {
         if (err) throw err;
         console.log(result);
+        db.end();
         done();
       });
     });
-    db.end();
   });
 });
