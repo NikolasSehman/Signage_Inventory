@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 REMOVE INVENTORY
+
+  h3 There are currently #{signTypes.length} signs in the database
+  form(name="remove-sign", method="post")
+        div.input
+            span.label Sign To Be Removed:   
+            input(type="text", name="sign_tb_rem")
+            br 
+            br
+
+            span.label Reason For Removal: 
+                    select(name="reason_tb_rem")
+                      option Pickup
+                      option Deletion
+                      option Theft
+                      option Mis-count
+                      option Other
+            br
+            br
+
+        div.actions
+            input(type="submit", value="Submit")
+
